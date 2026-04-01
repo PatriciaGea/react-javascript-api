@@ -6,7 +6,8 @@
 }
 body {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
   background: linear-gradient(180deg, #323252 0%, #4d4b85 100%);
   background-attachment: fixed;
   color: #ffffff;
