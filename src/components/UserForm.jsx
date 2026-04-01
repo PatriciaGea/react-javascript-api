@@ -1,7 +1,8 @@
-function UserForm({ name, email, age, onNameChange, onEmailChange, onAgeChange, editingId, loading, onSubmit, onSearch, onShowAll, onClear, onUpdate, onCancelEdit }) {
+function UserForm({ formRef, name, email, age, onNameChange, onEmailChange, onAgeChange, editingId, loading, onSubmit, onSearch, onShowAll, onClear, onUpdate, onCancelEdit }) {
   return (
-    <form onSubmit={(event) => event.preventDefault()}>
+    <form ref={formRef} onSubmit={(event) => event.preventDefault()}>
       <h1>{editingId ? 'Edit User' : 'User Registration'}</h1>
+      {editingId && <p className='edit-notice'>Open to edit — change the fields and click Save</p>}
       <input
         type='text'
         placeholder='Name'

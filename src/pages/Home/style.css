@@ -5,6 +5,16 @@
   padding-top: 100px;
 }
 
+.edit-notice {
+  background-color: #ffecb3;
+  color: #6d4c00;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .message {
   background-color: #8B8AE1;
   color: white;

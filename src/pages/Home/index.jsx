@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
 import { useUsers } from '../../hooks/useUsers'
@@ -11,6 +11,7 @@ function Home() {
   const [email, setEmail] = useState('')
   const [age, setAge] = useState('')
   const [editingId, setEditingId] = useState(null)
+  const formRef = useRef(null)
 
   const {
     users,
@@ -50,6 +51,7 @@ function Home() {
     setName(user.name)
     setEmail(user.email)
     setAge(String(user.age))
+    formRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
   async function handleUpdate() {
@@ -68,6 +70,7 @@ function Home() {
   return (
     <div className='container'>
       <UserForm
+        formRef={formRef}
         name={name}
         email={email}
         age={age}
