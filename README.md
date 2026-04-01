@@ -54,14 +54,6 @@ cd api_users
 npm install
 ```
 
-### Configuration
-
-Create `.env` in `api_users/`:
-```env
-MONGODB_URI=mongodb://localhost:27017/usersdb
-PORT=3000
-```
-
 ### Running
 
 ```bash

@@ -5,9 +5,11 @@ import './index.css'
 import Home from './pages/Home'
 import About from './pages/About'
 
+const basename = import.meta.env.BASE_URL
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
