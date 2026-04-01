@@ -1,5 +1,3 @@
-const dns = require("node:dns").promises
-dns.setServers(["1.1.1.1"])
 const mongoose = require("mongoose")
 
 const connectDB = async () => {
@@ -8,10 +6,7 @@ const connectDB = async () => {
     if (!mongoUri) {
       throw new Error('MONGODB_URI environment variable is not set')
     }
-    await mongoose.connect(mongoUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    })
+    await mongoose.connect(mongoUri)
     console.log("MongoDB connected")
   } catch (err) {
     console.error("MongoDB connection error:", err)

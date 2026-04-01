@@ -1,6 +1,3 @@
-const dns = require("node:dns").promises
-dns.setServers(["1.1.1.1"])
-const mongoose = require("mongoose")
 const express = require("express")
 const router = express.Router()
 const User = require("../models/user")
@@ -59,10 +56,15 @@ router.put("/:id", async (req, res) => {
     const { name, email, age } = req.body
     if (!name && !email && !age) return res.status(400).json({ message: "At least one field is required" })
 
+    const updateData = {}
+    if (name) updateData.name = name
+    if (email) updateData.email = email
+    if (age) updateData.age = Number(age)
+
     const user = await User.findByIdAndUpdate(
       req.params.id,
-      { ...(name && { name }), ...(email && { email }), ...(age && { age: Number(age) }) },
-      { new: true, runValidators: true }
+      updateData,
+      { new: true }
     )
 
     if (!user) return res.status(404).json({ message: "User not found" })
