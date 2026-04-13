@@ -1,3 +1,4 @@
+/* REVIEW: `form` and `h1` selectors are global — they affect any route that mounts a `<form>` or `<h1>`; scope under a parent class (e.g. `.home form`) to avoid leaking styles into About or future pages. */
 .container {
   display: flex;
   align-items: center;
@@ -16,7 +17,7 @@
 }
 
 .message {
-  background-color: #8B8AE1;
+  background-color: #8b8ae1;
   color: white;
   padding: 15px 25px;
   border-radius: 8px;
@@ -56,7 +57,8 @@ form {
   border: 1px solid #3a3961;
   max-width: 90%;
   width: 400px;
-  margin-bottom: 20px
+  /* REVIEW: Missing semicolon after `20px` — inconsistent with other declarations; enable Prettier/stylelint to enforce. */
+  margin-bottom: 20px;
 }
 
 .users-section {
@@ -72,7 +74,7 @@ form input {
 }
 
 form input:focus {
-  outline: 2px solid #8B8AE1;
+  outline: 2px solid #8b8ae1;
 }
 
 .button-group {
@@ -84,7 +86,7 @@ form input:focus {
 .button-group button {
   border-radius: 30px;
   border: none;
-  background-color: #8B8AE1;
+  background-color: #8b8ae1;
   color: #ffffff;
   width: 100%;
   max-width: 180px;
@@ -92,7 +94,9 @@ form input:focus {
   font-weight: bold;
   font-size: 15px;
   cursor: pointer;
-  transition: opacity 0.3s, transform 0.2s;
+  transition:
+    opacity 0.3s,
+    transform 0.2s;
 }
 
 .button-group button:hover {
@@ -101,22 +105,22 @@ form input:focus {
 }
 
 .btn-search {
-  background-color: #6C63FF !important;
+  background-color: #6c63ff !important;
 }
 
 .btn-show-all {
-  background-color: #4CAF50 !important;
+  background-color: #4caf50 !important;
 }
 
 .btn-clear {
-  background-color: #FF6B6B !important;
+  background-color: #ff6b6b !important;
 }
 
 .user-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2E2D4E;
+  background-color: #2e2d4e;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -128,7 +132,7 @@ form input:focus {
   width: 20px;
   height: 20px;
   filter: invert(1);
-  /* deixa branco */
+  /* REVIEW: Comment is Portuguese while the rest of the project is English — standardize language for maintainability. */
 }
 
 .btn-trash {
@@ -176,7 +180,7 @@ form input:focus {
 }
 
 .btn-edit {
-  background-color: #FFA726 !important;
+  background-color: #ffa726 !important;
 }
 
 .about-link {
@@ -185,12 +189,12 @@ form input:focus {
 }
 
 .about-link a {
-  color: #8B8AE1;
+  color: #8b8ae1;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
   padding: 12px 24px;
-  border: 1px solid #8B8AE1;
+  border: 1px solid #8b8ae1;
   border-radius: 8px;
   transition: all 0.3s;
 }

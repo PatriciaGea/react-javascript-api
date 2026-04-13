@@ -1,6 +1,7 @@
-*{
+/* REVIEW: Universal selector reset is fine for a small app; for larger apps consider a minimal reset or `normalize.css` to avoid fighting third-party widget styles. */
+* {
   margin: 0;
-  padding:0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
@@ -49,15 +50,15 @@ body {
 }
 
 .info-card {
-  background-color: #2E2D4E;
-  border: 1px solid #8B8AE1;
+  background-color: #2e2d4e;
+  border: 1px solid #8b8ae1;
   border-radius: 10px;
   padding: 30px;
   color: #ffffff;
 }
 
 .info-card h3 {
-  color: #8B8AE1;
+  color: #8b8ae1;
   margin-bottom: 15px;
   font-size: 18px;
 }
@@ -78,7 +79,7 @@ body {
   content: "→";
   position: absolute;
   left: 0;
-  color: #8B8AE1;
+  color: #8b8ae1;
 }
 
 .tech-list {
@@ -89,7 +90,7 @@ body {
 
 .tech-badge {
   background-color: rgba(139, 138, 225, 0.2);
-  border: 1px solid #8B8AE1;
+  border: 1px solid #8b8ae1;
   color: #b2b1df;
   padding: 8px 12px;
   border-radius: 20px;
@@ -111,14 +112,14 @@ body {
 .api-endpoint {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 8px 12px;
-  border-left: 3px solid #8B8AE1;
+  border-left: 3px solid #8b8ae1;
   border-radius: 4px;
   font-size: 13px;
   color: #b2b1df;
 }
 
 .api-endpoint strong {
-  color: #8B8AE1;
+  color: #8b8ae1;
   margin-right: 8px;
 }
 
@@ -133,7 +134,7 @@ body {
 .info-footer {
   text-align: center;
   padding-top: 30px;
-  border-top: 1px solid #8B8AE1;
+  border-top: 1px solid #8b8ae1;
   color: #b2b1df;
   font-size: 16px;
 }
@@ -151,7 +152,7 @@ body {
 }
 
 .social-link {
-  color: #8B8AE1;
+  color: #8b8ae1;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s;
@@ -161,7 +162,7 @@ body {
 }
 
 .social-link:hover {
-  color: #6C63FF;
+  color: #6c63ff;
   background-color: rgba(139, 138, 225, 0.1);
   transform: translateY(-2px);
 }

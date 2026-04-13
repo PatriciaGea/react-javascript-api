@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 api_users/.env
+# REVIEW: `.env.production` at repo root is not ignored — confirm it should be versioned (public API URL) vs. set only in CI secrets.

@@ -1,3 +1,4 @@
+# REVIEW: No `npm run lint` step — consider failing the build on lint errors before publishing to Pages.
 name: Deploy to GitHub Pages
 
 on:

@@ -1,17 +1,19 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+
+// REVIEW: `.env.example` documents `MONGO_URI` but code reads `MONGODB_URI` — align names so new contributors are not confused.
 
 const connectDB = async () => {
   try {
-    const mongoUri = process.env.MONGODB_URI
+    const mongoUri = process.env.MONGODB_URI;
     if (!mongoUri) {
-      throw new Error('MONGODB_URI environment variable is not set')
+      throw new Error("MONGODB_URI environment variable is not set");
     }
-    await mongoose.connect(mongoUri)
-    console.log("MongoDB connected")
+    await mongoose.connect(mongoUri);
+    console.log("MongoDB connected");
   } catch (err) {
-    console.error("MongoDB connection error:", err)
-    process.exit(1)
+    console.error("MongoDB connection error:", err);
+    process.exit(1);
   }
-}
+};
 
-module.exports = connectDB
+module.exports = connectDB;

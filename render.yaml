@@ -1,3 +1,4 @@
+# REVIEW: `healthCheckPath: /health` does not match any route in `api_users/server.js` — add a health endpoint or change this path.
 services:
   - type: web
     name: react-javascript-api-backend
