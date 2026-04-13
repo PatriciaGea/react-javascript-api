@@ -1,17 +1,18 @@
-import { useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import './style.css'
-import { useUsers } from '../../hooks/useUsers'
-import UserForm from '../../components/UserForm'
-import UserList from '../../components/UserList'
-import MessageBanner from '../../components/MessageBanner'
+import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import "./style.css";
+import { useUsers } from "../../hooks/useUsers";
+import UserForm from "../../components/UserForm";
+import UserList from "../../components/UserList";
+import MessageBanner from "../../components/MessageBanner";
 
+// REVIEW: Home owns a lot of form state while API state lives in `useUsers`; consider colocating form state in a small hook or lifting message/loading UX into a provider if the app grows.
 function Home() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [age, setAge] = useState('')
-  const [editingId, setEditingId] = useState(null)
-  const formRef = useRef(null)
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
+  const [editingId, setEditingId] = useState(null);
+  const formRef = useRef(null);
 
   const {
     users,
@@ -24,51 +25,51 @@ function Home() {
     deleteUser,
     updateUser,
     clearUsers,
-  } = useUsers()
+  } = useUsers();
 
   function clearForm() {
-    setName('')
-    setEmail('')
-    setAge('')
+    setName("");
+    setEmail("");
+    setAge("");
   }
 
   async function handleCreate() {
-    const success = await createUser({ name, email, age })
-    if (success) clearForm()
+    const success = await createUser({ name, email, age });
+    if (success) clearForm();
   }
 
   function handleSearch() {
-    searchUsers({ name, email, age })
+    searchUsers({ name, email, age });
   }
 
   function handleClear() {
-    clearForm()
-    clearUsers()
+    clearForm();
+    clearUsers();
   }
 
   function startEdit(user) {
-    setEditingId(user._id || user.id)
-    setName(user.name)
-    setEmail(user.email)
-    setAge(String(user.age))
-    formRef.current?.scrollIntoView({ behavior: 'smooth' })
+    setEditingId(user._id || user.id);
+    setName(user.name);
+    setEmail(user.email);
+    setAge(String(user.age));
+    formRef.current?.scrollIntoView({ behavior: "smooth" });
   }
 
   async function handleUpdate() {
-    const success = await updateUser(editingId, { name, email, age })
+    const success = await updateUser(editingId, { name, email, age });
     if (success) {
-      setEditingId(null)
-      clearForm()
+      setEditingId(null);
+      clearForm();
     }
   }
 
   function cancelEdit() {
-    setEditingId(null)
-    clearForm()
+    setEditingId(null);
+    clearForm();
   }
 
   return (
-    <div className='container'>
+    <div className="container">
       <UserForm
         formRef={formRef}
         name={name}
@@ -87,19 +88,19 @@ function Home() {
         onCancelEdit={cancelEdit}
       />
 
-      <MessageBanner messageRef={messageRef} message={message} loading={loading} />
-
-      <UserList
-        users={users}
-        onEdit={startEdit}
-        onDelete={deleteUser}
+      <MessageBanner
+        messageRef={messageRef}
+        message={message}
+        loading={loading}
       />
 
-      <nav className='about-link'>
-        <Link to='/about'>About This Project →</Link>
+      <UserList users={users} onEdit={startEdit} onDelete={deleteUser} />
+
+      <nav className="about-link">
+        <Link to="/about">About This Project →</Link>
       </nav>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

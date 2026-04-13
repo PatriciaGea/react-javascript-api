@@ -1,5 +1,7 @@
 # User Registration System
 
+<!-- REVIEW: Screenshot references `./public/IMG_8875.jpeg` but that file is not in `public/` — fix path or add the image so the README renders correctly. -->
+
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
@@ -38,6 +40,9 @@ A web app for managing user registrations with React, Node.js, and MongoDB. User
 ## Quick Start
 
 ### Prerequisites
+
+<!-- REVIEW: Frontend uses React 19 / Vite 7 — bump minimum Node recommendation (e.g. 18+) to match tooling support, not v14. -->
+
 - Node.js (v14+) | MongoDB | npm
 
 ### Installation
@@ -71,13 +76,13 @@ npm run dev
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/users` | Get all users or search with query params |
-| GET | `/users?name=X&email=Y&age=Z` | Search users by name, email, or age |
-| POST | `/users` | Create new user (name, email, age required) |
-| PUT | `/users/:id` | Update an existing user |
-| DELETE | `/users/:id` | Delete user by ID |
+| Method | Endpoint                      | Description                                 |
+| ------ | ----------------------------- | ------------------------------------------- |
+| GET    | `/users`                      | Get all users or search with query params   |
+| GET    | `/users?name=X&email=Y&age=Z` | Search users by name, email, or age         |
+| POST   | `/users`                      | Create new user (name, email, age required) |
+| PUT    | `/users/:id`                  | Update an existing user                     |
+| DELETE | `/users/:id`                  | Delete user by ID                           |
 
 ---
 

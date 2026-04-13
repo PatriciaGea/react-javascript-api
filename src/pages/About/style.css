@@ -1,1 +1,2 @@
 /* About page reuses styles from Home via index.css and shared class names */
+/* REVIEW: File is effectively unused because `About/index.jsx` never imports it — remove or import and move About-only rules here. */
